@@ -1,0 +1,12 @@
+build/
+dex/
+*.apk
+debug.keystore
+base.apk
+aligned.apk
+jdk16+
+*.iml
+.idea/
+*.idsig
+*.zip
+*.keystore
