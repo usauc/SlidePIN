@@ -15,3 +15,8 @@ SlidePIN v1.5
 2. LSPosed → 模块 → 启用 SlidePIN
 3. 作用域勾选「系统界面」（com.android.systemui）
 4. 重启 SystemUI 或重启手机
+已知限制
+- 数字键必须是 TextView；完全自绘的拨号盘不适用
+- 不做自动提交，滑完需按一次确认键（避免误触导致的密码错误）
+- 已在 Android 13 的 HyperOS 移植包实测；其他 ROM 可能需改 PIN_VIEW 常量
+- 三星 One UI、鸿蒙等自研锁屏不适用
