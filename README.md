@@ -1,3 +1,4 @@
+
 SlidePIN — 锁屏数字密码「滑动输入」
 给 Android 数字密码锁屏加上 Flyme 风格的滑动输入：手指依次划过密码的各位数字，一笔完成输入，不用逐个点按。
 - 支持 Android 13（AOSP Keyguard 类名，HyperOS / MIUI 移植包实测可用）
@@ -57,5 +58,3 @@ adb logcat | grep "\[SlidePin\]"
 - 模块只 Hook SystemUI 进程内的方法，不修改系统分区、不注入其他应用
 - 卸载 APK 或关闭模块开关即完全失效
 - 锁屏属于安全敏感界面，修改前请确保有指纹/备用解锁方式，避免被锁在门外
-许可证
-MIT，见 LICENSE。
