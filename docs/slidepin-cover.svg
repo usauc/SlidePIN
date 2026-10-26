@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A0E18"/>
+      <stop offset="0.55" stop-color="#0E1524"/>
+      <stop offset="1" stop-color="#111A2C"/>
+    </linearGradient>
+    <radialGradient id="glowBg" cx="0.78" cy="0.42" r="0.45">
+      <stop offset="0" stop-color="#2FE3C4" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#2FE3C4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="trail" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6FF3DA"/>
+      <stop offset="1" stop-color="#2FB9E8"/>
+    </linearGradient>
+    <linearGradient id="keyFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1B2740"/>
+      <stop offset="1" stop-color="#141E31"/>
+    </linearGradient>
+    <filter id="soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1.6" cy="1.6" r="1.1" fill="#26344F" opacity="0.55"/>
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <rect width="1280" height="640" fill="url(#dots)" opacity="0.5"/>
+  <rect width="1280" height="640" fill="url(#glowBg)"/>
+
+  <!-- 左侧文字 -->
+  <g font-family="Segoe UI, Microsoft YaHei, Helvetica, Arial, sans-serif">
+    <text x="88" y="238" fill="#F2F6FF" font-size="104" font-weight="700" letter-spacing="-2">SlidePIN</text>
+    <text x="90" y="300" fill="#8FA0BF" font-size="27">给锁屏数字密码加上滑动输入</text>
+    <text x="90" y="342" fill="#5C6C8A" font-size="21">手指依次划过各位数字，一笔完成输入</text>
+
+    <g>
+      <rect x="90" y="392" width="152" height="38" rx="19" fill="#16233A" stroke="#24385A"/>
+      <text x="166" y="417" fill="#7FE9D6" font-size="17" text-anchor="middle">LSPosed 模块</text>
+
+      <rect x="256" y="392" width="128" height="38" rx="19" fill="#16233A" stroke="#24385A"/>
+      <text x="320" y="417" fill="#8FB6E8" font-size="17" text-anchor="middle">Android 13</text>
+
+      <rect x="398" y="392" width="118" height="38" rx="19" fill="#16233A" stroke="#24385A"/>
+      <text x="457" y="417" fill="#8FA0BF" font-size="17" text-anchor="middle">MIT 协议</text>
+    </g>
+
+    <text x="90" y="556" fill="#4E5C79" font-size="17">github.com/usauc/SlidePIN</text>
+  </g>
+
+  <!-- 右侧键盘面板 -->
+  <g>
+    <rect x="716" y="58" width="472" height="540" rx="34" fill="#0F1729" stroke="#1E2C46" stroke-width="2"/>
+    <rect x="716" y="58" width="472" height="540" rx="34" fill="none" stroke="#2FE3C4" stroke-opacity="0.07" stroke-width="10"/>
+
+    <!-- 密码圆点 -->
+    <g fill="#3FC9B4">
+      <circle cx="884" cy="122" r="7"/>
+      <circle cx="912" cy="122" r="7"/>
+      <circle cx="940" cy="122" r="7"/>
+      <circle cx="968" cy="122" r="7"/>
+    </g>
+    <text x="952" y="158" fill="#4A5A78" font-size="15" text-anchor="middle"
+          font-family="Segoe UI, Microsoft YaHei, sans-serif">请输入密码</text>
+
+    <!-- 按键 -->
+    <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="34" text-anchor="middle">
+      <!-- 第一行 -->
+      <rect x="790" y="186" width="84" height="84" rx="26" fill="url(#keyFill)" stroke="#22314E"/>
+      <text x="832" y="252" fill="#C9D6EA">1</text>
+      <rect x="892" y="186" width="84" height="84" rx="26" fill="url(#keyFill)" stroke="#4FE0CC" stroke-opacity="0.55" stroke-width="2"/>
+      <text x="934" y="252" fill="#C9D6EA">2</text>
+      <rect x="994" y="186" width="84" height="84" rx="26" fill="url(#keyFill)" stroke="#22314E"/>
+      <text x="1036" y="252" fill="#C9D6EA">3</text>
+
+      <!-- 第二行 -->
+      <rect x="790" y="292" width="84" height="84" rx="26" fill="url(#keyFill)" stroke="#22314E"/>
+      <text x="832" y="354" fill="#C9D6EA">4</text>
+      <rect x="892" y="292" width="84" height="84" rx="26" fill="url(#keyFill)" stroke="#4FE0CC" stroke-opacity="0.5" stroke-width="2"/>
+      <text x="934" y="354" fill="#C9D6EA">5</text>
+      <rect x="994" y="292" width="84" height="84" rx="26" fill="url(#keyFill)" stroke="#22314E"/>
+      <text x="1036" y="354" fill="#C9D6EA">6</text>
+
+      <!-- 第三行 -->
+      <rect x="790" y="398" width="84" height="84" rx="26" fill="url(#keyFill)" stroke="#22314E"/>
+      <text x="832" y="456" fill="#C9D6EA">7</text>
+      <rect x="892" y="398" width="84" height="84" rx="26" fill="url(#keyFill)" stroke="#4FE0CC" stroke-opacity="0.45" stroke-width="2"/>
+      <text x="934" y="456" fill="#C9D6EA">8</text>
+      <rect x="994" y="398" width="84" height="84" rx="26" fill="url(#keyFill)" stroke="#22314E"/>
+      <text x="1036" y="456" fill="#C9D6EA">9</text>
+
+      <!-- 第四行 -->
+      <rect x="892" y="504" width="84" height="84" rx="26" fill="url(#keyFill)" stroke="#4FE0CC" stroke-opacity="0.4" stroke-width="2"/>
+      <text x="934" y="558" fill="#C9D6EA">0</text>
+
+      <g stroke="#4A5A78" stroke-width="2.4" fill="none" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M1030 540 h26 l14 -14 l-14 -14 h-26 l-14 14 z"/>
+        <path d="M1038 536 l12 -12 M1038 524 l12 12"/>
+      </g>
+    </g>
+
+    <!-- 滑动轨迹：只画在按键之间的缝隙里，避免遮挡数字 -->
+    <g stroke="#5FEBD6" stroke-linecap="round" fill="none">
+      <g stroke-width="14" opacity="0.55" filter="url(#soft)">
+        <path d="M934 272 L934 290"/>
+        <path d="M934 378 L934 396"/>
+        <path d="M934 484 L934 502"/>
+      </g>
+      <g stroke-width="6">
+        <path d="M934 272 L934 290"/>
+        <path d="M934 378 L934 396"/>
+        <path d="M934 484 L934 502"/>
+      </g>
+    </g>
+
+    <circle cx="934" cy="186" r="15" fill="#6FF3DA" opacity="0.14"/>
+    <circle cx="934" cy="504" r="15" fill="#6FF3DA" opacity="0.14"/>
+    <circle cx="934" cy="504" r="4" fill="#6FF3DA"/>
+  </g>
+</svg>

@@ -1,5 +1,7 @@
 # SlidePIN — 锁屏数字密码「滑动输入」
 
+![SlidePIN](docs/slidepin-cover-light.png)
+
 给 Android 数字密码锁屏加上 Flyme 风格的滑动输入：手指依次划过密码的各位数字，一笔完成输入，不用逐个点按。
 
 - 支持 Android 13（AOSP Keyguard 类名，HyperOS / MIUI 移植包实测可用）
@@ -7,6 +9,8 @@
 - 无界面、无后台服务、不联网、不申请任何权限
 
 ## 效果
+
+![2580 滑动输入演示](docs/slidepin-demo.gif)
 
 ```
 密码 2580
@@ -17,10 +21,12 @@
 
 `KeyguardPINView` 没有声明 `dispatchTouchEvent`，所以 Hook 点放在 `ViewGroup.dispatchTouchEvent`，再用实例类型过滤：
 
-1. `ACTION_DOWN` 只记录起点，**不接管**，普通点按完全走原生逻辑
-2. 移动距离超过 30px 判定为滑动，开始接管手势
-3. 每次进入一个新的数字键，向上找到可点击的容器（本 ROM 为 `NumPadKey`）并 `performClick()`
-4. 判定滑动时给首键补发 `ACTION_CANCEL`，避免按压态残留
+1. `ACTION_DOWN` 只记录起点，**不接管**，普通点按完全走原生逻辑；同时一次性缓存 12 个按键的屏幕矩形
+2. 移动超过 8dp 才判定为滑动，开始接管手势
+3. 切换目标键要求新键矩形向内收缩 6dp（滞回），避免手指压在键边缘时反复触发相邻键
+4. 第二根手指落下即放弃接管，把整个手势交还系统
+5. 每次进入新键，向上找到可点击的容器（本 ROM 为 `NumPadKey`）并 `performClick()`
+6. 判定滑动时给首键补发 `ACTION_CANCEL`，清除按压态残留
 
 关键取舍：**普通点击永不被拦截**。即使模块逻辑失效，你仍然可以正常点按输入密码。
 
@@ -106,3 +112,16 @@ adb logcat | grep "\[SlidePin\]"
 ## 许可证
 
 MIT，见 [LICENSE](LICENSE)。
+
+## 素材
+
+`docs/` 下的封面与演示动画均为本仓库自制，可自由用于介绍本模块：
+
+| 文件 | 用途 |
+|---|---|
+| `slidepin-cover.png` | 深色封面，1280×640，适合社交预览 |
+| `slidepin-cover-light.png` | 浅色封面，同上 |
+| `slidepin-demo.gif` | 2.6 秒滑动演示，480×800 |
+| `*.svg` | 矢量源文件，可直接改文字与配色 |
+
+演示动画由逐帧 SVG 渲染合成，生成脚本见 `dist` 目录（未随仓库分发）。
